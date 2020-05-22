@@ -23,8 +23,7 @@ const handler = (path) => {
         '--keypath', join(path, entry.dirName, 'privkey.pem'),
         '--fullchainpath', join(path, entry.dirName, 'fullchain.pem'),
         '--capath', join(path, entry.dirName, 'chain.pem'),
-        '--reloadcmd', 'sudo synoservice --restart nginx; sudo synoservice --restart nmbd; sudo synoservice --restart avahi',
-        '--force'
+        '--reloadcmd', 'sudo synoservice --restart nginx; sudo synoservice --restart nmbd; sudo synoservice --restart avahi'
       ]);
       console.log( `stderr: ${acme.stderr}` );
       console.log( `stdout: ${acme.stdout}` );
