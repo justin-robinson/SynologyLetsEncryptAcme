@@ -4,7 +4,7 @@ import { spawnSync } from 'child_process';
 import { homedir } from 'os';
 
 const handler = (path) => {
-  process.chdir(join(homedir(), 'acme'));
+  process.chdir(join(homedir(), 'acme.sh'));
   fs.readdirSync(path, { withFileTypes: true })
     .filter(file => file.isDirectory())
     .map(dir => {
