@@ -20,10 +20,11 @@ const handler = (path) => {
       const issueArgs = createCertArgs(join(path, dirName));
       const installArgs = createCertArgs(reverseProxyFolder);
       const reloadCommands = [
-        `achme.sh --install-cert -d ${domain} ${installArgs.join(' ')}`,
+        `(cd ${join(homedir(), 'acme.sh')}`,
+        `./acme.sh --install-cert -d ${domain} ${installArgs.join(' ')}`,
         'sudo synoservice --restart nginx',
         'sudo synoservice --restart nmbd',
-        'sudo synoservice --restart avahi'
+        'sudo synoservice --restart avahi)'
       ];
       const commandArgs = [
         '--issue',
